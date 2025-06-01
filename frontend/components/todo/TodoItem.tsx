@@ -4,7 +4,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { TodoItemProps } from "@/types/todo";
 
-export function TodoItem({ todo, toggleTodo, deleteTodo }: TodoItemProps) {
+export const TodoItem = ({ todo, toggleTodo, deleteTodo }: TodoItemProps) => {
   const {
     attributes,
     listeners,
@@ -127,4 +127,4 @@ export function TodoItem({ todo, toggleTodo, deleteTodo }: TodoItemProps) {
       </button>
     </li>
   );
-}
+};

@@ -17,19 +17,19 @@ import {
 import { Todo } from "@/types/todo";
 import { TodoItem } from "./TodoItem";
 
-interface TodoListProps {
+type Props = {
   todos: Todo[];
   toggleTodo: (id: number) => void;
   deleteTodo: (id: number) => void;
   onReorder: (todos: Todo[]) => void;
-}
+};
 
-export function TodoList({
+export const TodoList = ({
   todos,
   toggleTodo,
   deleteTodo,
   onReorder,
-}: TodoListProps) {
+}: Props) => {
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
@@ -84,4 +84,4 @@ export function TodoList({
       </SortableContext>
     </DndContext>
   );
-}
+};

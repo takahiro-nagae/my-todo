@@ -2,11 +2,11 @@
 
 import { useState, FormEvent } from "react";
 
-interface TodoFormProps {
+type Props = {
   onAdd: (text: string) => void;
-}
+};
 
-export function TodoForm({ onAdd }: TodoFormProps) {
+export const TodoForm = ({ onAdd }: Props) => {
   const [newTodo, setNewTodo] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
@@ -40,4 +40,4 @@ export function TodoForm({ onAdd }: TodoFormProps) {
       </div>
     </form>
   );
-}
+};

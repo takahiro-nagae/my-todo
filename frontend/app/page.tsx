@@ -5,7 +5,7 @@ import { Todo } from "@/types/todo";
 import { TodoForm } from "@/components/todo/TodoForm";
 import { TodoList } from "@/components/todo/TodoList";
 
-export default function Home() {
+const Home = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (text: string) => {
@@ -51,4 +51,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
