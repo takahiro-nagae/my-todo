@@ -14,13 +14,15 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Todo } from "@/types/todo";
+import { Todo, Category } from "@/types/todo";
 import { TodoItem } from "./TodoItem";
 
 type Props = {
   todos: Todo[];
   toggleTodo: (id: number) => void;
   deleteTodo: (id: number) => void;
+  updateCategory: (id: number, category: Category) => void;
+  updateDueDate: (id: number, dueDate: Date | null) => void;
   onReorder: (todos: Todo[]) => void;
 };
 
@@ -28,6 +30,8 @@ export const TodoList = ({
   todos,
   toggleTodo,
   deleteTodo,
+  updateCategory,
+  updateDueDate,
   onReorder,
 }: Props) => {
   const sensors = useSensors(
@@ -78,6 +82,8 @@ export const TodoList = ({
               todo={todo}
               toggleTodo={toggleTodo}
               deleteTodo={deleteTodo}
+              updateCategory={updateCategory}
+              updateDueDate={updateDueDate}
             />
           ))}
         </ul>
